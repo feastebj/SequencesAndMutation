@@ -103,15 +103,17 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
-    shortest = strings[0]
+    n = 0
+    min_value = 20
     for k in range(len(strings)):
-        if strings[k] < strings(shortest):
-            strings[k] = shortest
-    return shortest
+        if len(strings[k]) < min_value:
+            min_value = len(strings[k])
+            n = k
+    return strings[n]
 
 
 def run_test_index_of_largest_number():
@@ -186,10 +188,16 @@ def index_of_largest_number(numbers, n):
 
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
+    index_of_min = 0
+    for k in range(1, n):
+        if numbers[k] > numbers[index_of_min]:
+            index_of_min = k
+
+    return index_of_min
 
 # ----------------------------------------------------------------------
 # Some problems iterate (loop) through the sequence accessing TWO
